@@ -1,6 +1,6 @@
 # Flask-simple-API
 
-Hello there, this is my first project using Python and Flask. I learned it from 15 July 2019, so it is still 3 days from the time I learned the framework and also it is my first time using JWT in API. So, eventhough this project seems not really amusing but I am proud of it.
+Hello there, this is my first project using Python and Flask. I learned it from July 15th, so it is still 3 days from the time I learned the framework and also it is my first time using JWT in API. So, eventhough this project seems not really amusing but I am proud of it.
 Any advice and suggestions will be greatly appreciated! 
 
 ## Step
