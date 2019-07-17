@@ -19,19 +19,6 @@ TODO :
 1. coba JWT pake flask-jwt-extended
 """
 
-class JSONEncoder(json.JSONEncoder):
-    ''' extend json-encoder class'''
-
-    def default(self, o):
-        if isinstance(o, ObjectId):
-            return str(o)
-        if isinstance(o, set):
-            return list(o)
-        if isinstance(o, datetime.datetime):
-            return str(o)
-        return json.JSONEncoder.default(self, o)
-
-
 ALLOWED_EXTENSIONS = set(['png', 'jpg', 'jpeg'])
 SYSTEM_DIR= 'C:/[ DATA (F)]/DemoVenv/flask/DemoUpload'
 UPLOAD_FOLDER = '/img' #root_path+'/img'
@@ -39,7 +26,6 @@ UPLOAD_FOLDER = '/img' #root_path+'/img'
 app = Flask(__name__)
 flask_bcrypt = Bcrypt(app)
 jwt = JWTManager(app)
-app.json_encoder = JSONEncoder
 
 app.config['SERVER_HOST'] = 'localhost'
 app.config['MYSQL_DATABASE_HOST'] = app.config['SERVER_HOST']
@@ -60,11 +46,7 @@ def unauthorized_response(callback):
         'ok': False,
         'message': 'Missing Authorization Header'
 }), 401
-
-# @app.route('/',methods=['GET','POST'])
-# def index():
-# 	return render_template('index.html')
-#
+ 
 
 @app.route('/refresh', methods=['POST'])
 @jwt_refresh_token_required

@@ -5,7 +5,8 @@ Any advice and suggestions will be greatly appreciated!
 
 ## Step
 <ul>
-  <li>run virtual environment di flask>Scripts>activate</li>
+  <li>run virtual environment di Scripts>activate</li>
+  <li>run aplikasi DemoAPI di flask>DemoAPI>python app.py</li>
   <li>masuk ke browser http://localhost:5000</li>
   <li>import database ke PHPmyadmin</li>
   <li>akses API menggunakan Postman</li>
